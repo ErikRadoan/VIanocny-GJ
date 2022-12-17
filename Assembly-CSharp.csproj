@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\SpawningSystem.cs" />
-     <Compile Include="Assets\Scripts\House.cs" />
+     <Compile Include="Assets\Scripts\HouseMovement.cs" />
      <Compile Include="Assets\Scripts\SantaMovement.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

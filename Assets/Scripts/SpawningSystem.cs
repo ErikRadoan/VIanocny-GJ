@@ -7,6 +7,7 @@ public class SpawningSystem : MonoBehaviour
   [SerializeField] private TimeManager timeManager;
   [SerializeField] private GameObject house1, house2, house3, house4;
   [SerializeField] private int house1MaxNumber, house2MaxNumber, house3MaxNumber;
+  [SerializeField] private int startingSpeed;
   [SerializeField] private int screenStartX, roadStartX, roadEndX, screenCornerX;
   [SerializeField] private int houseSpawnY;
   private  List<GameObject> _list = new();
@@ -22,7 +23,7 @@ public class SpawningSystem : MonoBehaviour
  private IEnumerator WaveTimer()
  {
   Instantiate(GetHouseType(), new Vector2(GetXPosition(), houseSpawnY), new Quaternion(0, 0, 0, 0));
-  yield return new WaitForSeconds(1);
+  yield return new WaitForSeconds(startingSpeed);
   timeManager.SpeedUpTime();
   StartCoroutine("WaveTimer");
  }

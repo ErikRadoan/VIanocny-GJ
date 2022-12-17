@@ -162,8 +162,8 @@ MonoBehaviour:
   house3MaxNumber: 15
   startingSpeed: 1
   screenStartX: -11
-  roadStartX: 0
-  roadEndX: 0
+  roadStartX: -6
+  roadEndX: 6
   screenCornerX: 11
   houseSpawnY: 7
 --- !u!4 &13708110

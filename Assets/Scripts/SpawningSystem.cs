@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class SpawningSystem : MonoBehaviour
 {
+  [SerializeField] private TimeManager timeManager;
   [SerializeField] private GameObject house1, house2, house3, house4;
   [SerializeField] private int house1MaxNumber, house2MaxNumber, house3MaxNumber;
   [SerializeField] private int screenStartX, roadStartX, roadEndX, screenCornerX;
   [SerializeField] private int houseSpawnY;
-  [SerializeField] private float spawningSpeed, speedUpFactor;
-  private  List<GameObject> _list = new List<GameObject>();
-  private IEnumerator coroutine;
+  private  List<GameObject> _list = new();
+  private IEnumerator _coroutine;
 
-  public void StartSpawning()
+  public void Start()
   {
-   coroutine = WaveTimer();
-  StartCoroutine(coroutine);
- }
+   _coroutine = WaveTimer();
+   StartCoroutine(_coroutine);
+  }
  
 
  private IEnumerator WaveTimer()
  {
   Instantiate(GetHouseType(), new Vector2(GetXPosition(), houseSpawnY), new Quaternion(0, 0, 0, 0));
-  yield return new WaitForSeconds(spawningSpeed);
-  spawningSpeed -= speedUpFactor;
+  yield return new WaitForSeconds(1);
+  timeManager.SpeedUpTime();
   StartCoroutine("WaveTimer");
  }
 

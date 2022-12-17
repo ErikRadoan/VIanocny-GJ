@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class HouseMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnPressed(bool rightClicked)
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

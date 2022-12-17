@@ -153,14 +153,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 487534517}
-  house1: {fileID: 0}
-  house2: {fileID: 0}
-  house3: {fileID: 0}
-  house4: {fileID: 0}
+  house1: {fileID: 8728751240601014071, guid: c204b4b0293f7cf458b8bdfcd7be426e, type: 3}
+  house2: {fileID: 1611795067196420032, guid: 7966291dfbcfcca479c898f0613c8a45, type: 3}
+  house3: {fileID: 7965846524640281303, guid: fd0dfe24ad6e1cd438719bec65652a50, type: 3}
+  house4: {fileID: 3755590056104640045, guid: 39a82f06c9c729c4b89c4cf77ec42215, type: 3}
   house1MaxNumber: 5
   house2MaxNumber: 10
   house3MaxNumber: 15
-  startingSpeed: 0
+  startingSpeed: 1
   screenStartX: -11
   roadStartX: 0
   roadEndX: 0

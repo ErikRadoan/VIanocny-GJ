@@ -7,9 +7,9 @@ public class SpawningSystem : MonoBehaviour
   [SerializeField] private TimeManager timeManager;
   [SerializeField] private GameObject house1, house2, house3, house4;
   [SerializeField] private int house1MaxNumber, house2MaxNumber, house3MaxNumber;
-  [SerializeField] private int startingSpeed;
-  [SerializeField] private int screenStartX, roadStartX, roadEndX, screenCornerX;
-  [SerializeField] private int houseSpawnY;
+  [SerializeField] private float startingSpeed;
+  [SerializeField] private float screenStartX, roadStartX, roadEndX, screenCornerX;
+  [SerializeField] private float houseSpawnY;
   private  List<GameObject> _list = new();
   private IEnumerator _coroutine;
 
@@ -46,12 +46,15 @@ public class SpawningSystem : MonoBehaviour
   return _list[Random.Range(0, _list.Count)];
  }
 
- private int GetXPosition()
+ private bool _roadSide;
+ private float GetXPosition()
  {
-  if (Random.Range(0, 2) == 0)
+  if (_roadSide)
   {
+   _roadSide = !_roadSide;
    return Random.Range(screenStartX, roadStartX);
   }
+  _roadSide = !_roadSide;
   return Random.Range(roadEndX, screenCornerX);
  }
 }

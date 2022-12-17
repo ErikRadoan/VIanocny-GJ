@@ -8,6 +8,8 @@ public class HouseMovement : MonoBehaviour
     private Transform _transform;
     [SerializeField] private float moveAmount;
     [SerializeField] private float startTime;
+    [SerializeField] private int howManyClicks;
+    [SerializeField] private bool isBlack = false;
     private void Awake()
     {
         _transform = gameObject.transform;
@@ -16,8 +18,18 @@ public class HouseMovement : MonoBehaviour
 
     public void OnPressed(bool rightClicked)
     {
-        
-        
+        if (isBlack && !rightClicked)
+        {
+            //Game Lost
+        }
+
+        howManyClicks--;
+        if (howManyClicks <= 0)
+        {
+            //Play The Animation
+            Destroy(gameObject);
+        }
+
     }
 
     private IEnumerator Move()

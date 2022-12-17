@@ -13,7 +13,7 @@ public class TimeManager : MonoBehaviour
 
     public void SpeedUpTime()
     {
-        Time.timeScale += scalingFactor;
+        Time.timeScale = Mathf.Clamp(Time.timeScale + scalingFactor, 0 , 100);
 
     }
 }

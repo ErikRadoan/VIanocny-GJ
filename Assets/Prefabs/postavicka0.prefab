@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7632209612921589793}
   - component: {fileID: 1444922985525205433}
   - component: {fileID: 7526303399010193587}
+  - component: {fileID: -3268406736842232077}
   m_Layer: 0
   m_Name: postavicka0
   m_TagString: RoadObsticle
@@ -72,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 20189687
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fd0493f02a2f24149ac4d2c839332973, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,3 +129,15 @@ MonoBehaviour:
   startTime: 0.01
   howManyClicks: 99999999
   isBlack: 1
+--- !u!114 &-3268406736842232077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979082179487094599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69438ddcacdc872468574fb78b3de5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

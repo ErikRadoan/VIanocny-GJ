@@ -84,8 +84,12 @@
      <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\Road.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\MainMenuCT.cs" />
      <Compile Include="Assets\Scripts\OptionsCT.cs" />
+=======
+     <Compile Include="Assets\Scripts\DestroyObsticles.cs" />
+>>>>>>> 5fcf2b034a7d88721fb5d4b729d75fe9d5a69694
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

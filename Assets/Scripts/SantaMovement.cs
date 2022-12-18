@@ -7,6 +7,7 @@ public class SantaMovement : MonoBehaviour
     public GameObject santaPos2;
     public GameObject santaPos3;
     public GameObject santa;
+    [SerializeField] private GameObject rayCast;
     private int _santaPosition;
     void Start()
     {
@@ -26,6 +27,13 @@ public class SantaMovement : MonoBehaviour
             _santaPosition = Mathf.Clamp(_santaPosition + 1, 1 , 3);
             UpdatePosition();
         }
+        RaycastHit2D hit = Physics2D.Raycast(rayCast.transform.position, Vector2.up);
+        if(hit.collider == null){return;}
+        Debug.Log(hit.collider.name);
+        if (hit.collider.CompareTag("RoadObsticle") && hit.collider.transform.position.y < -2.1f)
+        {
+            //Lost
+        }
     }
 
     void UpdatePosition()
@@ -43,13 +51,5 @@ public class SantaMovement : MonoBehaviour
                 break;
         }
         
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.transform.CompareTag("RoadObsticle"))
-        {
-            Debug.Log("ahhh shit");
-        }
     }
 }

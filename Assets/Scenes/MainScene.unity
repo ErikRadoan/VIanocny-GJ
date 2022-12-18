@@ -181,6 +181,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &28077357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1486135820111702090, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
+  m_PrefabInstance: {fileID: 1744434075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &63059985
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +718,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &966921347
 RectTransform:
@@ -796,6 +801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a517377c651ad344ae470e279d512b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lostMenu: {fileID: 28077357}
+  _tmpText: {fileID: 1422953741}
 --- !u!4 &1410087633
 Transform:
   m_ObjectHideFlags: 0
@@ -811,6 +818,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422953741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3268456065407735985, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
+  m_PrefabInstance: {fileID: 1744434075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1426699933
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +871,7 @@ GameObject:
   - component: {fileID: 1431297383}
   - component: {fileID: 1431297385}
   - component: {fileID: 1431297384}
+  - component: {fileID: 1431297386}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -877,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -593, y: 121}
+  m_AnchoredPosition: {x: -263, y: 121}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431297384
@@ -909,8 +928,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -977,6 +996,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431297382}
   m_CullTransparentMesh: 1
+--- !u!114 &1431297386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431297382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a43eee6c62d6a49bcd881bcbe18b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 60
+  timerIsRunning: 0
+  timerText: {fileID: 1431297384}
 --- !u!1001 &1744434075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,13 +1106,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1486135820111702087, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486135820111702087, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 20189687
+      objectReference: {fileID: 0}
     - target: {fileID: 1486135820111702090, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
       propertyPath: m_Name
       value: GameOver Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 1486135820111702090, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1486135820848896027, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1425,7 +1467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: prewarm
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: autoRandomSeed

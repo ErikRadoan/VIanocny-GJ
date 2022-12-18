@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         _score += score;
-        _tmpText.text = "Tvoje score je: " + _score;
+        _tmpText.text = "Your Score Is: " + _score;
     }
     public void Lost()
     {

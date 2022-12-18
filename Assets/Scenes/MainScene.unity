@@ -742,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1486135820111702090, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8b235aebb4cf146940e63fa7e7e103, type: 3}
@@ -1063,6 +1063,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: simulationSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: useUnscaledTime
       value: 1
       objectReference: {fileID: 0}
@@ -1075,24 +1079,52 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: VelocityModule.z.scalar
-      value: -15
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: RotationModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: RotationModule.x.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: RotationModule.y.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: RotationModule.curve.minScalar
+      value: -3.4906585
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 9
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: RotationModule.curve.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: InitialModule.startSpeed.minMaxState
@@ -1104,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2431620026312098039, guid: 92ef6b25d2ffa714cadad9e9ae8bdf07, type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState

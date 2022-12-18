@@ -28,6 +28,9 @@ public class Road : MonoBehaviour
     {
         int obsitcle1 = Random.Range(0, positions.Count +1);
         int obsitcle2 = Random.Range(0, positions.Count +1);
+        if (obsitcle1 == obsitcle2)
+        {
+            obsitcle2 = 0;}
         if (obsitcle1 != 0)
         {
             Instantiate(GetRandomObsticle(), positions[obsitcle1 -1].gameObject.transform);

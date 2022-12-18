@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SantaMovement : MonoBehaviour
@@ -42,5 +43,13 @@ public class SantaMovement : MonoBehaviour
                 break;
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.CompareTag("RoadObsticle"))
+        {
+            Debug.Log("ahhh shit");
+        }
     }
 }

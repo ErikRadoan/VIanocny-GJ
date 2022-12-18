@@ -7,6 +7,7 @@ public class SantaMovement : MonoBehaviour
     public GameObject santaPos2;
     public GameObject santaPos3;
     public GameObject santa;
+    public GameObject GameOverCanvas;
     [SerializeField] private GameObject rayCast;
     private int _santaPosition;
     void Start()
@@ -32,7 +33,7 @@ public class SantaMovement : MonoBehaviour
         Debug.Log(hit.collider.name);
         if (hit.collider.CompareTag("RoadObsticle") && hit.collider.transform.position.y < -2.1f)
         {
-            //Lost
+            Lost();
         }
     }
 
@@ -51,5 +52,11 @@ public class SantaMovement : MonoBehaviour
                 break;
         }
         
+    }
+
+    public void Lost()
+    {
+        Time.timeScale = 0;
+        GameOverCanvas.SetActive(true);
     }
 }

@@ -9,7 +9,7 @@ public class HouseLost : MonoBehaviour
     {
         if (gameObject.transform.position.y < -6)
         {
-            //LOst
+            SantaMovement.GetComponent<SantaMovement>.Lost();
         }
     }
 }

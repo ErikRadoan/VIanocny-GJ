@@ -27,12 +27,16 @@ public class SantaMovement : MonoBehaviour
             _santaPosition = Mathf.Clamp(_santaPosition + 1, 1 , 3);
             UpdatePosition();
         }
-        RaycastHit2D hit = Physics2D.Raycast(rayCast.transform.position, Vector2.up);
+        RaycastHit2D hit = Physics2D.Raycast(rayCast.transform.position, Vector2.up, 0.1f);
         if(hit.collider == null){return;}
-        Debug.Log(hit.collider.name);
-        if (hit.collider.CompareTag("RoadObsticle") && hit.collider.transform.position.y < -2.1f)
+        
+        if (hit.collider.tag  == "RoadObsticle")
         {
             //Lost
+            Debug.Log("Lost");
+        } else if (hit.collider.tag == "Devil")
+        {
+            Destroy(hit.collider.gameObject);
         }
     }
 

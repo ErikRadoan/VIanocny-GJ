@@ -6,12 +6,14 @@ using UnityEngine;
 public class HouseMovement : MonoBehaviour
 {
     private Transform _transform;
+    private GameManager _gameManager;
     [SerializeField] private float moveAmount;
     [SerializeField] private float startTime;
     [SerializeField] private int howManyClicks;
     [SerializeField] private bool isBlack = false;
     private void Awake()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _transform = gameObject.transform;
         StartCoroutine("Move");
     }
@@ -24,8 +26,10 @@ public class HouseMovement : MonoBehaviour
         }
 
         howManyClicks--;
+        _gameManager.AddScore(1);
         if (howManyClicks <= 0)
         {
+            _gameManager.AddScore(1);
             //Play The Animation
             Destroy(gameObject);
         }

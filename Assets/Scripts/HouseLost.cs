@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class HouseLost : MonoBehaviour
 {
+    private GameManager _gameManager;
+
+    private void Start()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }   
+
     private void Update()
     {
         if (gameObject.transform.position.y < -6)
         {
-            //Lost
+            _gameManager.Lost();
         }
     }
 }

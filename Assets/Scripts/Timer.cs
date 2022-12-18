@@ -7,8 +7,10 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 60;
     public bool timerIsRunning = false;
     public TMPro.TextMeshProUGUI timerText;
+    private GameManager _gameManager;
     private void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         // Starts the timer automatically
         timerIsRunning = true;
     }
@@ -23,9 +25,11 @@ public class Timer : MonoBehaviour
             }
             else
             {
+                _gameManager.AddScore(20);
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                _gameManager.Lost();
             }
         }
     }

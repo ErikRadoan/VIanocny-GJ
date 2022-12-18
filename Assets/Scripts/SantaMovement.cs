@@ -7,10 +7,12 @@ public class SantaMovement : MonoBehaviour
     public GameObject santaPos2;
     public GameObject santaPos3;
     public GameObject santa;
+    private GameManager _gameManager;
     [SerializeField] private GameObject rayCast;
     private int _santaPosition;
     void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         santa.transform.position = santaPos2.transform.position;
         _santaPosition = 2;
 
@@ -32,10 +34,10 @@ public class SantaMovement : MonoBehaviour
         
         if (hit.collider.tag  == "RoadObsticle")
         {
-            //Lost
-            Debug.Log("Lost");
+            _gameManager.Lost();
         } else if (hit.collider.tag == "Devil")
         {
+            _gameManager.AddScore(5);
             Destroy(hit.collider.gameObject);
         }
     }

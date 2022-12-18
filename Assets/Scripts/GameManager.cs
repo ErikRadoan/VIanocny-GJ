@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject lostMenu;
+    [SerializeField] private TMP_Text _tmpText;
+    private int _score;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -22,5 +27,16 @@ public class GameManager : MonoBehaviour
             houseMovement.OnPressed(true);
 
         }
+    }
+
+    public void AddScore(int score)
+    {
+        _score += score;
+        _tmpText.text = "Tvoje score je: " + _score;
+    }
+    public void Lost()
+    {
+        lostMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 }

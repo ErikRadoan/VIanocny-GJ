@@ -7,7 +7,6 @@ public class SantaMovement : MonoBehaviour
     public GameObject santaPos2;
     public GameObject santaPos3;
     public GameObject santa;
-    public GameObject GameOverCanvas;
     [SerializeField] private GameObject rayCast;
     private int _santaPosition;
     void Start()
@@ -28,12 +27,16 @@ public class SantaMovement : MonoBehaviour
             _santaPosition = Mathf.Clamp(_santaPosition + 1, 1 , 3);
             UpdatePosition();
         }
-        RaycastHit2D hit = Physics2D.Raycast(rayCast.transform.position, Vector2.up);
+        RaycastHit2D hit = Physics2D.Raycast(rayCast.transform.position, Vector2.up, 0.1f);
         if(hit.collider == null){return;}
-        Debug.Log(hit.collider.name);
-        if (hit.collider.CompareTag("RoadObsticle") && hit.collider.transform.position.y < -2.1f)
+        
+        if (hit.collider.tag  == "RoadObsticle")
         {
-            Lost();
+            //Lost
+            Debug.Log("Lost");
+        } else if (hit.collider.tag == "Devil")
+        {
+            Destroy(hit.collider.gameObject);
         }
     }
 
@@ -52,11 +55,5 @@ public class SantaMovement : MonoBehaviour
                 break;
         }
         
-    }
-
-    public void Lost()
-    {
-        Time.timeScale = 0;
-        GameOverCanvas.SetActive(true);
     }
 }

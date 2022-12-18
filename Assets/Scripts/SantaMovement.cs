@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SantaMovement : MonoBehaviour
@@ -8,28 +6,41 @@ public class SantaMovement : MonoBehaviour
     public GameObject santaPos2;
     public GameObject santaPos3;
     public GameObject santa;
-
-    // Start is called before the first frame update
+    private int _santaPosition;
     void Start()
     {
         santa.transform.position = santaPos2.transform.position;
+        _santaPosition = 2;
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            santa.transform.position = santaPos1.transform.position;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            santa.transform.position = santaPos2.transform.position;
+            _santaPosition = Mathf.Clamp(_santaPosition - 1, 1 , 3);
+            UpdatePosition();
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            santa.transform.position = santaPos3.transform.position;
+            _santaPosition = Mathf.Clamp(_santaPosition + 1, 1 , 3);
+            UpdatePosition();
         }
+    }
+
+    void UpdatePosition()
+    {
+        switch (_santaPosition)
+        {
+            case 1:
+                santa.transform.position = santaPos1.transform.position;
+                break;
+            case 2:
+                santa.transform.position = santaPos2.transform.position;
+                break;
+            case 3:
+                santa.transform.position = santaPos3.transform.position;
+                break;
+        }
+        
     }
 }

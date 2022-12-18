@@ -37,6 +37,7 @@ public class SantaMovement : MonoBehaviour
             _gameManager.Lost();
         } else if (hit.collider.tag == "Devil")
         {
+            _gameManager.AddScore(5);
             Destroy(hit.collider.gameObject);
         }
     }

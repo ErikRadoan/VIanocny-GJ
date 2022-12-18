@@ -26,6 +26,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
+                _gameManager.AddScore(20);
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;

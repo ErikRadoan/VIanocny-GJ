@@ -1,7 +1,12 @@
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class Road : MonoBehaviour
 {
@@ -11,8 +16,12 @@ public class Road : MonoBehaviour
     [SerializeField] private GameObject devil;
     [SerializeField] private float timeBetweenWaves;
     private List<GameObject> _road1 = new();
+    private int _road1HasACar;
     private List<GameObject> _road2 = new();
+    private int _road2HasACar;
     private List<GameObject> _road3 = new();
+    private int _road3HasACar;
+
     private void Start()
     {
         StartCoroutine("WaveSpawningTimer");
@@ -28,19 +37,46 @@ public class Road : MonoBehaviour
     {
         int obsitcle1 = Random.Range(0, positions.Count +1);
         int obsitcle2 = Random.Range(0, positions.Count +1);
+        GameObject spawnedObject1 = GetRandomObsticle();
         if (obsitcle1 == obsitcle2)
         {
-            obsitcle2 = 0;}
+            obsitcle2 = 0;
+            
+        }
         if (obsitcle1 != 0)
         {
-            Instantiate(GetRandomObsticle(), positions[obsitcle1 -1].gameObject.transform);
-        }
-
-        if (obsitcle2 != 0)
-        {
-            Instantiate(GetRandomObsticle(), positions[obsitcle2 -1].gameObject.transform);
+            switch (obsitcle1)
+            {
+                case 1:
+                    _road1.Add(spawnedObject1);
+                    break;
+                case 2:
+                    _road2.Add(spawnedObject1);
+                    break;
+                case 3:
+                    _road3.Add(spawnedObject1);
+                    break;
+            }
+            Instantiate(spawnedObject1, positions[obsitcle1 -1].gameObject.transform);
         }
         
+        GameObject spawnedObject2 = GetRandomObsticle();
+        if (obsitcle2 != 0)
+        {
+            switch (obsitcle2)
+            {
+                case 1:
+                    _road1.Add(spawnedObject2);
+                    break;
+                case 2:
+                    _road2.Add(spawnedObject2);
+                    break;
+                case 3:
+                    _road3.Add(spawnedObject2);
+                    break;
+            }
+            Instantiate(spawnedObject2, positions[obsitcle2 -1].gameObject.transform);
+        }
     }
 
     private GameObject GetRandomObsticle()

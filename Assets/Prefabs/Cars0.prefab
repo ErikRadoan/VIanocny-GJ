@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1993432267671451881}
   - component: {fileID: 2645129362786774713}
   - component: {fileID: -8077970838669237059}
+  - component: {fileID: 871680701716822603}
   m_Layer: 0
   m_Name: Cars0
   m_TagString: RoadObsticle
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 20189687
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cc2e49fa3547bcf458b7e74f1d57ccf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,3 +129,15 @@ MonoBehaviour:
   startTime: 0.01
   howManyClicks: 999999999
   isBlack: 1
+--- !u!114 &871680701716822603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155088791365816118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69438ddcacdc872468574fb78b3de5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101985125}
   m_Layer: 0
-  m_Name: SantaPos2
+  m_Name: SantaPos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &176904197
 PrefabInstance:
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 480628087}
   m_Layer: 0
-  m_Name: SantaPos3
+  m_Name: SantaPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487534516
 GameObject:
@@ -620,7 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426699934}
   m_Layer: 0
-  m_Name: SantaPos1
+  m_Name: SantaPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744434075
 PrefabInstance:

@@ -23,7 +23,7 @@ public class SpawningSystem : MonoBehaviour
  private IEnumerator WaveTimer()
  {
   Instantiate(GetHouseType(), new Vector2(GetXPosition(), houseSpawnY), new Quaternion(0, 0, 0, 0));
-  yield return new WaitForSeconds(startingSpeed);
+  yield return new WaitForSecondsRealtime(startingSpeed);
   timeManager.SpeedUpTime();
   StartCoroutine("WaveTimer");
  }

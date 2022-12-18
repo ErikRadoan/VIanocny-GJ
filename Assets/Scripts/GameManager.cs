@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject lostMenu;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -22,5 +23,11 @@ public class GameManager : MonoBehaviour
             houseMovement.OnPressed(true);
 
         }
+    }
+
+    public void Lost()
+    {
+        lostMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 }
